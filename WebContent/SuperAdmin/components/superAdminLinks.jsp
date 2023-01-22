@@ -18,3 +18,4 @@
 
 <link rel="stylesheet" href="../assets/css/style.css">
 
+ <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
