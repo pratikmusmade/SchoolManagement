@@ -8,6 +8,7 @@
 <title>Super Admin</title>
 </head>
 <body>
+
 	<div class="main-wrapper">
 				<jsp:include page="./components/superAdminHeader.jsp"></jsp:include>
 				<jsp:include page="./components/superAdminSidebar.jsp"></jsp:include>
