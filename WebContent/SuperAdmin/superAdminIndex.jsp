@@ -9,11 +9,14 @@
 </head>
 <body>
 	<div class="main-wrapper">
-		<div class="page-wrapper">
-			<div class="content container-fluid">
 				<jsp:include page="./components/superAdminHeader.jsp"></jsp:include>
 				<jsp:include page="./components/superAdminSidebar.jsp"></jsp:include>
+		<div class="page-wrapper">
+			<div class="content container-fluid">
+
 			</div>
+			
+			
 		</div>
 	</div>
 	<jsp:include page="./components/superAdminFooter.jsp"></jsp:include>
