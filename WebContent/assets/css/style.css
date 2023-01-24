@@ -77,9 +77,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 	box-shadow: 0 0 0px 1000px white inset !important;
 }
 
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button  {
 	-webkit-appearance: none;
 	margin: 0;
+}
+select::-webkit-outer-spin-button, input::-webkit-inner-spin-button  {
+	-webkit-appearance: none;
+	margin: 0;
+	
+	
+
 }
 
 .form-control {
@@ -1201,7 +1208,7 @@ a.bg-danger:focus, a.bg-danger:hover, button.bg-danger:focus, button.bg-danger:h
 	background-color: #18aefa;
 	border: 1px solid #18aefa;
 }
-
+.
 .btn-primary.active:not (:disabled ):not (.disabled ), .btn-primary:active:not
 	(:disabled ):not (.disabled ), .show>.btn-primary.dropdown-toggle {
 	background-color: #18aefa;

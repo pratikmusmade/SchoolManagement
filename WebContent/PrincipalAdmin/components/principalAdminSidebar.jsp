@@ -22,9 +22,9 @@
 									<span class="menu-arrow"></span>
 							</a>
 								<ul>
-									<li><a href="departments.html">Add Section</a></li>
-									<li><a href="add-department.html">Add Class</a></li>
-									<li><a href="edit-department.html">Add Division</a></li>
+									<li><a href="addSection.jsp">Add Section</a></li>
+									<li><a href="addClass.jsp">Add Class</a></li>
+									<li><a href="addDivision.jsp">Add Division</a></li>
 
 								</ul></li>
 

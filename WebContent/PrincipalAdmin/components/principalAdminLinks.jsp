@@ -17,4 +17,10 @@
 	href="../assets/plugins/fontawesome/css/all.min.css">
 
 <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet"
+	href="../assets/plugins/datatables/datatables.min.css">
 
+<link rel="stylesheet"
+	href="../assets/plugins/select2/css/select2.min.css">
+<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width'
+	name='viewport'>
