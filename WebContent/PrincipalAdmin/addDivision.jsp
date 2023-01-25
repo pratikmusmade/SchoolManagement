@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +27,6 @@
 		<div class="page-wrapper">
 			<div class="content container-fluid">
 
-			
 					<div class="row  pb-3">
 						<div class="col">
 							<h2 class="">Division</h2>
