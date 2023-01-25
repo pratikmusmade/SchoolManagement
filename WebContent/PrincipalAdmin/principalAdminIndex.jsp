@@ -17,10 +17,7 @@
 			<div class="content container-fluid">
 			
 			<h1>
-			
-			<%
-			DataBaseConnectionProvider.getConnection();		
-			%>
+		
 			</h1>
 			</div>
 		</div>

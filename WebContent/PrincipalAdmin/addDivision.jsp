@@ -10,14 +10,14 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0,   -scalable=0">
-<title>Preskool - Departments</title>
+<title>	 - Departments</title>
 
 <jsp:include page="./components/principalAdminLinks.jsp"></jsp:include>
 
 
 </head>
 
-<body>
+<body>	
 
 	<div class="main-wrapper">
 
