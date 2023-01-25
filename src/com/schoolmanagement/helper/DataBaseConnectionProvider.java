@@ -11,7 +11,6 @@ public class DataBaseConnectionProvider {
 			if (con == null) {
 				Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/schoolmanagementdb", "root", "root");
-				System.out.println(con);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
