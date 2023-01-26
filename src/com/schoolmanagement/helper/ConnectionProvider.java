@@ -2,7 +2,7 @@ package com.schoolmanagement.helper;
 
 import java.sql.*;
 
-public class DataBaseConnectionProvider {
+public class ConnectionProvider {
 	private static Connection con;
 
 	public static Connection getConnection() {
