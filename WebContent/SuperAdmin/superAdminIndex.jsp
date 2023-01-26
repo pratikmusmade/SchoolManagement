@@ -1,7 +1,6 @@
-<%@page import="com.schoolmanagement.helper.DataBaseConnectionProvider"%>
+<%@page import="com.school.management.helper.ConnectionProvider"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.sql.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,17 +9,13 @@
 <title>Super Admin</title>
 </head>
 <body>
-
 	<div class="main-wrapper">
-				<jsp:include page="./components/superAdminHeader.jsp"></jsp:include>
-				<jsp:include page="./components/superAdminSidebar.jsp"></jsp:include>
+		<jsp:include page="./components/superAdminHeader.jsp"></jsp:include>
+		<jsp:include page="./components/superAdminSidebar.jsp"></jsp:include>
 		<div class="page-wrapper">
 			<div class="content container-fluid">
-
+			<%=ConnectionProvider.hello()%>
 			</div>
-			
-			<%= DataBaseConnectionProvider.getConnection() %>
-			
 		</div>
 	</div>
 	<jsp:include page="./components/superAdminFooter.jsp"></jsp:include>
