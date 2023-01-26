@@ -24,27 +24,34 @@
 
 				<div class="row  pb-3">
 					<div class="col">
-						<h2 >Section</h2>
+						<h2>Section</h2>
 					</div>
 				</div>
 
 
 				<div class="student-group-form">
-					<div class="row">
+					<!--  Add Section Form -->
 
-						<div class="col-lg-3 col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control py-2"
-									placeholder="Add Section">
-							</div>
-						</div>
+					<form action="DB/sectionDB.jsp" method="Post">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
 
-						<div class="col-lg-2">
-							<div class="search-student-btn">
-								<button type="btn" class="btn btn-success px-5 py-2">Add</button>
+								<div class="form-group">
+									<input name="sectionName" type="text" class="form-control py-2"
+										placeholder="Add Section">
+								</div>
+
 							</div>
+
+							<div class="col-lg-2 mx-2">
+								<div class="search-student-btn">
+									<button type="submit" class="btn btn-primary">Search</button>
+								</div>
+							</div>
+
 						</div>
-					</div>
+					</form>
+
 				</div>
 				<div class="row">
 					<div class="col-sm-12">

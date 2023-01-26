@@ -20,5 +20,5 @@
 		</div>
 	</div>
 	<jsp:include page="./components/principalAdminFooter.jsp"></jsp:include>
-</body>
+</body>	
 </html>
