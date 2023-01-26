@@ -14,8 +14,54 @@
 					<li class="menu-title"><span>Main Menu</span></li>
 					<li class="submenu active"><a href="#"><i
 							class="feather-grid"></i> <span> Dashboard</span> </a></li>
+					<li class="submenu"><a href="#"><i class="fas fa-building"></i>
+							<span>Section & Division</span> <span class="menu-arrow"></span></a>
+						<ul>
+
+							<li class="submenu"><a href="javascript:void(0);"> <span>Add</span>
+									<span class="menu-arrow"></span>
+							</a>
+								<ul>
+									<li><a href="addSection.jsp">Add Section</a></li>
+									<li><a href="addClass.jsp">Add Class</a></li>
+									<li><a href="addDivision.jsp">Add Division</a></li>
+
+								</ul></li>
+
+
+
+							<li class="submenu"><a href="javascript:void(0);"> <span>List</span>
+									<span class="menu-arrow"></span>
+							</a>
+								<ul>
+
+									<li><a href="departments.html">Section List</a></li>
+									<li><a href="add-department.html">Class List</a></li>
+									<li><a href="edit-department.html">Division List</a></li>
+
+								</ul></li>
+
+
+
+							<li class="submenu"><a href="javascript:void(0);"> <span>Edit</span>
+									<span class="menu-arrow"></span>
+							</a>
+								<ul>
+									<li><a href="departments.html">Edit Section</a></li>
+									<li><a href="add-department.html">Edit Class</a></li>
+									<li><a href="edit-department.html">Edit Division</a></li>
+
+								</ul></li>
+
+						
+						</ul></li>
+
+
+
+
+
 					<li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-					
+
 				</ul>
 			</div>
 		</div>

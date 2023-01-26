@@ -1,4 +1,4 @@
-<%@page import="com.school.management.helper.ConnectionProvider"%>
+<%@page import="com.schoolmanagement.helper.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -12,6 +12,7 @@
 <body>
 	<div class="main-wrapper">
 		<div class="page-wrapper">
+		<%=ConnectionProvider.getConnection() %>
 			<div class="content container-fluid">
 				<jsp:include page="./components/principalAdminHeader.jsp"></jsp:include>
 				<jsp:include page="./components/principalAdminSidebar.jsp"></jsp:include>
