@@ -1,11 +1,26 @@
-/*
-Author       : Dreamguys
-Template Name: Preskool - Bootstrap Admin Template
-Version      : 1.0
-*/
 
-(function ($) {
-	"use strict";
+
+
+(function($) {
+	(function() {
+		'use strict'
+
+		// Fetch all the forms we want to apply custom Bootstrap validation styles to
+		var forms = document.querySelectorAll('.needs-validation')
+
+		// Loop over them and prevent submission
+		Array.prototype.slice.call(forms)
+			.forEach(function(form) {
+				form.addEventListener('submit', function(event) {
+					if (!form.checkValidity()) {
+						event.preventDefault()
+						event.stopPropagation()
+					}
+
+					form.classList.add('was-validated')
+				}, false)
+			})
+	})()
 
 	// Variables declarations
 
@@ -15,13 +30,13 @@ Version      : 1.0
 
 	// Sidebar
 
-	var Sidemenu = function () {
+	var Sidemenu = function() {
 		this.$menuItem = $('#sidebar-menu a');
 	};
 
 	function init() {
 		var $this = Sidemenu;
-		$('#sidebar-menu a').on('click', function (e) {
+		$('#sidebar-menu a').on('click', function(e) {
 			if ($(this).parent().hasClass('submenu')) {
 				e.preventDefault();
 			}
@@ -44,7 +59,7 @@ Version      : 1.0
 	// Mobile menu sidebar overlay
 
 	$('body').append('<div class="sidebar-overlay"></div>');
-	$(document).on('click', '#mobile_btn', function () {
+	$(document).on('click', '#mobile_btn', function() {
 		$wrapper.toggleClass('slide-nav');
 		$('.sidebar-overlay').toggleClass('opened');
 		$('html').addClass('menu-opened');
@@ -54,7 +69,7 @@ Version      : 1.0
 	// toggle-password
 
 	if ($('.toggle-password').length > 0) {
-		$(document).on('click', '.toggle-password', function () {
+		$(document).on('click', '.toggle-password', function() {
 			$(this).toggleClass("feather-eye feather-eye-off");
 			var input = $(".pass-input");
 			if (input.attr("type") == "password") {
@@ -65,7 +80,7 @@ Version      : 1.0
 		});
 	}
 	if ($('.reg-toggle-password').length > 0) {
-		$(document).on('click', '.reg-toggle-password', function () {
+		$(document).on('click', '.reg-toggle-password', function() {
 			$(this).toggleClass("feather-eye feather-eye-off");
 			var input = $(".pass-confirm");
 			if (input.attr("type") == "password") {
@@ -78,7 +93,7 @@ Version      : 1.0
 
 	// Sidebar overlay
 
-	$(".sidebar-overlay").on("click", function () {
+	$(".sidebar-overlay").on("click", function() {
 		$wrapper.removeClass('slide-nav');
 		$(".sidebar-overlay").removeClass("opened");
 		$('html').removeClass('menu-opened');
@@ -86,7 +101,7 @@ Version      : 1.0
 
 	// Logo Hide Btn
 
-	$(document).on("click", ".logo-hide-btn", function () {
+	$(document).on("click", ".logo-hide-btn", function() {
 		$(this).parent().hide();
 	});
 
@@ -99,7 +114,7 @@ Version      : 1.0
 
 	// Page Content Height Resize
 
-	$(window).resize(function () {
+	$(window).resize(function() {
 		if ($('.page-wrapper').length > 0) {
 			var height = $(window).height();
 			$(".page-wrapper").css("min-height", height);
@@ -147,12 +162,12 @@ Version      : 1.0
 
 	// Experience Add More
 
-	$(".settings-form").on('click', '.trash', function () {
+	$(".settings-form").on('click', '.trash', function() {
 		$(this).closest('.links-cont').remove();
 		return false;
 	});
 
-	$(document).on("click", ".add-links", function () {
+	$(document).on("click", ".add-links", function() {
 		var experiencecontent = '<div class="row form-row links-cont">' +
 			'<div class="form-group d-flex">' +
 			'<button class="btn social-icon"><i class="feather-github"></i></button>' +
@@ -177,9 +192,9 @@ Version      : 1.0
 				previous: 'fas fa-angle-left'
 			}
 		});
-		$('.datetimepicker').on('dp.show', function () {
+		$('.datetimepicker').on('dp.show', function() {
 			$(this).closest('.table-responsive').removeClass('table-responsive').addClass('temp');
-		}).on('dp.hide', function () {
+		}).on('dp.hide', function() {
 			$(this).closest('.temp').addClass('table-responsive').removeClass('temp')
 		});
 	}
@@ -206,7 +221,7 @@ Version      : 1.0
 	// Zoom in
 
 	if ($('.zoom-screen .header-nav-list').length > 0) {
-		$('.zoom-screen .header-nav-list').on('click', function (e) {
+		$('.zoom-screen .header-nav-list').on('click', function(e) {
 			if (!document.fullscreenElement) {
 				document.documentElement.requestFullscreen();
 			} else {
@@ -219,13 +234,13 @@ Version      : 1.0
 
 	// Check all email
 
-	$(document).on('click', '#check_all', function () {
+	$(document).on('click', '#check_all', function() {
 		$('.checkmail').click();
 		return false;
 	});
 	if ($('.checkmail').length > 0) {
-		$('.checkmail').each(function () {
-			$(this).on('click', function () {
+		$('.checkmail').each(function() {
+			$(this).on('click', function() {
 				if ($(this).closest('tr').hasClass('checked')) {
 					$(this).closest('tr').removeClass('checked');
 				} else {
@@ -237,7 +252,7 @@ Version      : 1.0
 
 	// Mail important
 
-	$(document).on('click', '.mail-important', function () {
+	$(document).on('click', '.mail-important', function() {
 		$(this).find('i.fa').toggleClass('fa-star').toggleClass('fa-star-o');
 	});
 
@@ -269,7 +284,7 @@ Version      : 1.0
 		var wHeight = $(window).height() - 60;
 		$slimScrolls.height(wHeight);
 		$('.sidebar .slimScrollDiv').height(wHeight);
-		$(window).resize(function () {
+		$(window).resize(function() {
 			var rHeight = $(window).height() - 60;
 			$slimScrolls.height(rHeight);
 			$('.sidebar .slimScrollDiv').height(rHeight);
@@ -278,7 +293,7 @@ Version      : 1.0
 
 	// Small Sidebar
 
-	$(document).on('click', '#toggle_btn', function () {
+	$(document).on('click', '#toggle_btn', function() {
 		if ($('body').hasClass('mini-sidebar')) {
 			$('body').removeClass('mini-sidebar');
 			$('.subdrop + ul').slideDown();
@@ -286,12 +301,12 @@ Version      : 1.0
 			$('body').addClass('mini-sidebar');
 			$('.subdrop + ul').slideUp();
 		}
-		setTimeout(function () {
+		setTimeout(function() {
 
 		}, 300);
 		return false;
 	});
-	$(document).on('mouseover', function (e) {
+	$(document).on('mouseover', function(e) {
 		e.stopPropagation();
 		if ($('body').hasClass('mini-sidebar') && $('#toggle_btn').is(':visible')) {
 			var targ = $(e.target).closest('.sidebar').length;
@@ -308,7 +323,7 @@ Version      : 1.0
 
 	// Circle Progress Bar
 	function animateElements() {
-		$('.circle-bar1').each(function () {
+		$('.circle-bar1').each(function() {
 			var elementPos = $(this).offset().top;
 			var topOfWindow = $(window).scrollTop();
 			var percent = $(this).find('.circle-graph1').attr('data-percent');
@@ -325,7 +340,7 @@ Version      : 1.0
 				});
 			}
 		});
-		$('.circle-bar2').each(function () {
+		$('.circle-bar2').each(function() {
 			var elementPos = $(this).offset().top;
 			var topOfWindow = $(window).scrollTop();
 			var percent = $(this).find('.circle-graph2').attr('data-percent');
@@ -342,7 +357,7 @@ Version      : 1.0
 				});
 			}
 		});
-		$('.circle-bar3').each(function () {
+		$('.circle-bar3').each(function() {
 			var elementPos = $(this).offset().top;
 			var topOfWindow = $(window).scrollTop();
 			var percent = $(this).find('.circle-graph3').attr('data-percent');
@@ -368,7 +383,7 @@ Version      : 1.0
 
 	// Preloader
 
-	$(window).on('load', function () {
+	$(window).on('load', function() {
 		if ($('#loader').length > 0) {
 			$('#loader').delay(350).fadeOut('slow');
 			$('body').delay(350).css({ 'overflow': 'visible' });
@@ -377,12 +392,12 @@ Version      : 1.0
 
 	// Checkbox Select
 
-	$('.app-listing .selectBox').on("click", function () {
+	$('.app-listing .selectBox').on("click", function() {
 		$(this).parent().find('#checkBoxes').fadeToggle();
 		$(this).parent().parent().siblings().find('#checkBoxes').fadeOut();
 	});
 
-	$('.invoices-main-form .selectBox').on("click", function () {
+	$('.invoices-main-form .selectBox').on("click", function() {
 		$(this).parent().find('#checkBoxes-one').fadeToggle();
 		$(this).parent().parent().siblings().find('#checkBoxes-one').fadeOut();
 	});
@@ -392,7 +407,7 @@ Version      : 1.0
 	if ($('.SortBy').length > 0) {
 		var show = true;
 		var checkbox1 = document.getElementById("checkBox");
-		$('.selectBoxes').on("click", function () {
+		$('.selectBoxes').on("click", function() {
 
 			if (show) {
 				checkbox1.style.display = "block";
@@ -406,8 +421,8 @@ Version      : 1.0
 
 	// Invoices Checkbox Show
 
-	$(function () {
-		$("input[name='invoice']").click(function () {
+	$(function() {
+		$("input[name='invoice']").click(function() {
 			if ($("#chkYes").is(":checked")) {
 				$("#show-invoices").show();
 			} else {
@@ -418,12 +433,12 @@ Version      : 1.0
 
 	// Invoices Add More
 
-	$(".links-info-one").on('click', '.service-trash', function () {
+	$(".links-info-one").on('click', '.service-trash', function() {
 		$(this).closest('.links-cont').remove();
 		return false;
 	});
 
-	$(document).on("click", ".add-links", function () {
+	$(document).on("click", ".add-links", function() {
 		var experiencecontent = '<div class="links-cont">' +
 			'<div class="service-amount">' +
 			'<a href="#" class="service-trash"><i class="fe fe-minus-circle me-1"></i>Service Charge</a> <span>$ 4</span' +
@@ -434,12 +449,12 @@ Version      : 1.0
 		return false;
 	});
 
-	$(".links-info-discount").on('click', '.service-trash-one', function () {
+	$(".links-info-discount").on('click', '.service-trash-one', function() {
 		$(this).closest('.links-cont-discount').remove();
 		return false;
 	});
 
-	$(document).on("click", ".add-links-one", function () {
+	$(document).on("click", ".add-links-one", function() {
 		var experiencecontent = '<div class="links-cont-discount">' +
 			'<div class="service-amount">' +
 			'<a href="#" class="service-trash-one"><i class="fe fe-minus-circle me-1"></i>Offer new</a> <span>$ 4 %</span' +
@@ -499,7 +514,7 @@ Version      : 1.0
 		$('#timer-countercallback').countdown({
 			from: 10,
 			to: 0,
-			timerEnd: function () {
+			timerEnd: function() {
 				this.css({ 'text-decoration': 'line-through' }).animate({ 'opacity': .5 }, 500);
 			}
 		});
@@ -516,7 +531,7 @@ Version      : 1.0
 
 	if ($('[data-bs-toggle="tooltip"]').length > 0) {
 		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+		var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
 			return new bootstrap.Tooltip(tooltipTriggerEl)
 		})
 	}
@@ -525,7 +540,7 @@ Version      : 1.0
 
 	if ($('.popover-list').length > 0) {
 		var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-		var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+		var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
 			return new bootstrap.Popover(popoverTriggerEl)
 		})
 	}
@@ -538,12 +553,12 @@ Version      : 1.0
 
 	// Invoices Table Add More
 
-	$(".add-table-items").on('click', '.remove-btn', function () {
+	$(".add-table-items").on('click', '.remove-btn', function() {
 		$(this).closest('.add-row').remove();
 		return false;
 	});
 
-	$(document).on("click", ".add-btn", function () {
+	$(document).on("click", ".add-btn", function() {
 		var experiencecontent = '<tr class="add-row">' +
 			'<td>' +
 			'<input type="text" class="form-control">' +

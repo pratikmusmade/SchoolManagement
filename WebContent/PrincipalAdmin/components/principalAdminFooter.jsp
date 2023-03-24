@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -8,7 +8,9 @@
 </head>
 <body>
 
-
+	<footer>
+	<p>COPYRIGHT LOGO</p>
+	</footer>
 	<!-- JavaScript links -->
 
 	<script src="../assets/js/jquery-3.6.0.min.js"></script>
@@ -23,6 +25,7 @@
 	<script src="../assets/plugins/apexchart/chart-data.js"></script>
 
 	<script src="../assets/js/script.js"></script>
+	<script src="https://kit.fontawesome.com/341dc2ad4e.js" crossorigin="anonymous"></script>
 	<!-- JavaScript links -->
 </body>
 </html>
