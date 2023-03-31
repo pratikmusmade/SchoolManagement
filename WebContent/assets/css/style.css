@@ -85,7 +85,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	border: 1px solid #ddd;
 	box-shadow: none;
 	color: #333;
-	font-size: 15px;
+	font-size: 14px;
 	height: 45px;
 }
 
@@ -151,6 +151,7 @@ textarea.form-control {
 label {
 	display: inline-block;
 	margin-bottom: 0.5rem;
+	font-weight:bold;
 }
 
 .input-group .form-control {
@@ -2586,7 +2587,7 @@ footer p {
 .sidebar-menu li a {
 	color: #6f6f6f;
 	display: block;
-	font-size: 15px;
+	font-size: 14px;
 	height: auto;
 	padding: 0 20px;
 	font-weight: 500;
@@ -4104,7 +4105,7 @@ table.table-inbox tbody tr.checked {
 	width: 100%;
 	max-width: 100%;
 	padding: 0;
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	font-weight: 500;
 	line-height: inherit;
 	color: #333;
@@ -10076,7 +10077,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
 
 @media ( max-width : 767.98px) {
 	body {
-		font-size: 0.9375rem;
+		font-size: 0.8rem;
 	}
 	h1, .h1 {
 		font-size: 2rem;
@@ -10099,7 +10100,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
 	.header .has-arrow .dropdown-toggle:after {
 		display: none;
 	}
-	.user-menu.nav>li>a>span:not (.user-img ) {
+	.user-menu.nav>li>a>span:not(.user-img ) {
 		display: none;
 	}
 	.navbar-nav .open .dropdown-menu {
@@ -10340,7 +10341,7 @@ body[data-layout-mode=dark] .alertify .ajs-footer .ajs-buttons .ajs-button.ajs-o
 		display: block;
 	}
 	.card .card-header .card-title {
-		font-size: 16px;
+		font-size: 14px;
 	}
 	.links-cont .form-group {
 		margin-bottom: 10px;

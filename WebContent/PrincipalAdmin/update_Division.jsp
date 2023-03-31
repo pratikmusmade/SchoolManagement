@@ -11,15 +11,27 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
-<jsp:include page="./components/principalAdminLinks.jsp"></jsp:include>
-</head>
+<jsp:include page="./components/principalAdminLinks.jsp"></jsp:include></head>
 <body>
 	<div class="main-wrapper">
-		<jsp:include page="./components/principalAdminHeader.jsp"></jsp:include>
-		<jsp:include page="./components/principalAdminSidebar.jsp"></jsp:include>
+		<jsp:include page="./components/principalAdminHeader.jsp"></jsp:include></head>
+		<jsp:include page="./components/principalAdminSidebar.jsp"></jsp:include></head>
 		<div class="page-wrapper">
 
 			<div class="content container-fluid">
+
+				<div class="page-header">
+					<div class="row">
+						<div class="col">
+							<h3 class="page-title">Update Division SDetails</h3>
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+								<li class="breadcrumb-item active">Division Details</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="card">
@@ -28,44 +40,43 @@
 								int id = Integer.parseInt(request.getParameter("id"));
 								Connection con = ConnectionProvider.getConnection();
 								Statement stmt = con.createStatement();
-								ResultSet rs = stmt.executeQuery("select * from academicyear where academicYearId=" + id + ";");
+								ResultSet rs = stmt.executeQuery("select * from division where divisionId=" + id + ";");
 								rs.next();
 								%>
-								<form>
+								<form method="post" id="updateDivision">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
-												<span>Update Academic Year </span>
+												<span> Update Division</span>
 											</h5>
 										</div>
-										<div class="col-12 col-sm-4">
+										<div class="col-12 col-sm-6">
 											<div class="form-group ">
-												<label for="validationCustom01"> Starting Academic
-													Year (Ex. 2020)</label> <input type="text" name="academicYear"
-													value="<%=rs.getString("academicyear")%>"
-													class="form-control">
+												<label for="validationCustom01"> <input
+											type="text" name="
+"
+											value="<%=rs.getString("division")%>"
+											class="form-control"></label> 
 
 											</div>
 										</div>
-										<div class="col-12 col-sm-4">
-											<div class="form-group">
-												<label for="validationCustom01"> Academic Year Start
-													Month Number </label> <input type="text" name="startmonthNumber"
-													value="<%=rs.getString("startmonthNumber")%>"
-													class="form-control">
+																			
+										<div class="col-12 col-sm-6">
+											<div class="form-group row">
+												<label for="validationCustom01">Status</label> <select
+											class="form-control" id="validationCustom01" 
+											name="status" value="<%=rs.getString("status")%>">
+													<option>Active</option>
+													<option>In-Active</option>
+												</select>
 											</div>
-										</div>
-										<div class="col-12 col-sm-4">
-											<div class="form-group">
-												<label for="validationCustom01"> Next Academic Year
-													Date</label> <input type="text" name="nextAcademicYearDate"
-													value="<%=rs.getString("nextAcademicYearDate")%>"
-													class="form-control">
-											</div>
+
 										</div>
 										<div class="col-12 text-end">
-											<button type="submit" class="btn btn-primary">Update</button>
+
+											<button type="submit" class="btn btn-primary">Save</button>
 											<button type="reset" class="btn btn-danger">Reset</button>
+
 										</div>
 									</div>
 								</form>
@@ -77,7 +88,7 @@
 			</div>
 		</div>
 
-		<jsp:include page="./components/principalAdminFooter.jsp"></jsp:include>
+		<jsp:include page="./components/principalAdminFooter.jsp"></jsp:include></head>
 		<script
 			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 		<script
@@ -87,32 +98,32 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#updateAcademicYear').submit(function(event) {
+			$('#updateDivision').submit(function(event) {
 				event.preventDefault();
 				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($('#updateAcademicYear')[0].checkValidity() === false) {
+				   if ($('#updateDivision')[0].checkValidity() === false) {
 				        event.stopPropagation();
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : "DB/updateacademicYearDB.jsp?id=<%=id%>",
-							data:$('#updateAcademicYear').serialize(),
+							url : "DB/updateDivisionDB.jsp?id=<%=id%>",
+							data:$('#updateDivision').serialize(),
 							success : function(responce) {
 								console.log(responce.trim())
 								if (responce.trim() == "1") {
-									$('#updateAcademicYear')[0].reset()
+									$('#updateDivision')[0].reset()
 									Swal.fire({
 										icon: 'success',
-										  title: 'AcademicYear Updated Successfully ' ,
+										  title: 'Division Updated Successfully ' ,
 										  confirmButtonText: 'Ok',
 										}).then((result) => {
 										  /* Read more about isConfirmed, isDenied below */
-											 window.location.href="addAcademicYear.jsp";
+											 window.location.href="addDivision.jsp";
 										})
 								} else {
 									Swal.fire({
 									icon: 'error',
-									title: 'AcademicYear cannot be added ' ,
+									title: 'Division cannot be added ' ,
 									confirmButtonText: 'Ok',
 									}).then((result) => {
 									/* Read more about isConfirmed, isDenied below */

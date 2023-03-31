@@ -18,7 +18,8 @@
 							class="fas fa-chalkboard-teacher"></i> <span> Academic
 								Year</span> <span class="menu-arrow"></span></a>
 						<ul>
-							<li><a href="./add_Academic_Year.jsp">Academic Year Entry</a></li>
+							<li><a href="./add_Academic_Year.jsp">Academic Year
+									Entry</a></li>
 							<li><a href="academicYearChange.jsp">Academic Year
 									Change</a></li>
 
@@ -34,9 +35,11 @@
 							class="menu-arrow"></span></a>
 						<ul>
 							<li><a href="add_Class.jsp"> Class Create </a></li>
-							<li><a href="year_Wise_Class_Division.jsp">Year-Wise Class Division</a></li>
+							<li><a href="year_Wise_Class_Division.jsp">Year-Wise
+									Class Division</a></li>
 							<li><a href="assign_Class_Toteacher.jsp">Assign Class</a>
-							<li><a href="Unassign_Class_Toteacher.jsp">Unassign Class</a></li>
+							<li><a href="Unassign_Class_Toteacher.jsp">Unassign
+									Class</a></li>
 							<li><a href="shiftClass.jsp">Shift Classes</a></li>
 
 
@@ -51,9 +54,9 @@
 					<li class="submenu"><a href="#"><i class="fas fa-male"></i>
 							<span> Staff</span> <span class="menu-arrow"></span></a>
 						<ul>
-							<li><a href="addStaff.jsp">Add Staff</a></li>
-							<li><a href="addStaffRole.jsp">Add Staff Role</a></li>
-							<li><a href="updateStaff.jsp">Update Staff</a></li>
+							<li><a href="add_Staff.jsp">Add Staff</a></li>
+							<li><a href="add_Staff_Role.jsp">Add Staff Role</a></li>
+							<li><a href="update_Staff.jsp">Update Staff</a></li>
 
 
 						</ul></li>
@@ -63,29 +66,29 @@
 							<li><a href="studentEntryForm.jsp">Student Entry Form </a></li>
 							<!--  <li><a href="shortEntryForm.jsp">Short Entry Form</a></li>
 						<li><a href="fullEntryForm.jsp">Full Entry Form</a></li> -->
-							<li><a href="studentView.jsp">View</a></li>
-							<li><a href="downloadDetails.jsp">Download Details</a></li>
+							<li><a href="student_View.jsp">View</a></li>
+							<li><a href="download_Details.jsp">Download Details</a></li>
 							<li><a href="generateStudentICard.jsp">Generate I-card</a></li>
 							<!--  <li><a href="otherDetails.jsp">Other Details</a></li> -->
-							<li><a href="birthdayDetails.jsp">Birthday Details</a></li>
+							<li><a href="birthday_Details.jsp">Birthday Details</a></li>
 							<li><a href="">Shift Students</a></li>
-							<li><a href="studentCastCategoryWiseDetails.jsp">Yearly
-									Caste Category Report</a></li>
-							<li><a href="studentClassWiseGenderDetails.jsp">Classwise
+							<li><a href="cast_categorywise_Details.jsp">Yearly Caste
+									Category Report</a></li>
+							<li><a href="Classwise_Gender_Report.jsp">Classwise
 									Gender Report</a></li>
 						</ul></li>
 					<li class="submenu"><a href="#"><i class="fas fa-user"></i>
 							<span> Roll No</span> <span class="menu-arrow"></span></a>
 						<ul>
-							<li><a href="studentAssignRollno.jsp">Assign Roll No </a></li>
+							<li><a href="student_Assign_Rollno.jsp">Assign Roll No </a></li>
 							<li><a href="">Unassign Roll No</a></li>
 							<li><a href="fullEntryForm.jsp">Roll No List</a></li>
 
 						</ul></li>
 
 					<li><a href="timetable.jsp"><i class="fas fa-table"></i> <span>TimeTable</span></a></li>
-					<li class="submenu"><a href="#"><i class="fas fa-folder"></i> <span>Documents</span> <span
-							class="menu-arrow"></span></a>
+					<li class="submenu"><a href="#"><i class="fas fa-folder"></i>
+							<span>Documents</span> <span class="menu-arrow"></span></a>
 						<ul>
 							<li><a href=""></a></li>
 							<li><a href=""></a></li>
@@ -94,14 +97,15 @@
 							<li><a href=""></a></li>
 							<li><a href=""></a></li>
 						</ul></li>
-					<li><a href="userInformation.jsp"><i class="fas fa-user-graduate"></i> <span>User Information</span></a></li>
+					<li><a href="user_Information.jsp"><i
+							class="fas fa-user-graduate"></i> <span>User Information</span></a></li>
 					<li class="submenu"><a href="#"><i
 							class="fas fa-file-invoice-dollar"></i> <span>Others</span> <span
 							class="menu-arrow"></span></a>
 						<ul>
-							<li><a href="addDesignation.jsp">Designation</a></li>
-							<li><a href="addCast.jsp">Cast</a></li>
-							<li><a href="addReligion.jsp">Religion</a></li>
+							<li><a href="add_Designation.jsp">Designation</a></li>
+							<li><a href="add_Cast.jsp">Cast</a></li>
+							<li><a href="add_Religion.jsp">Religion</a></li>
 						</ul></li>
 					<li class="menu-title"><span>Attendence</span></li>
 					<li><a href="assignedClassAttendence.jsp"><i

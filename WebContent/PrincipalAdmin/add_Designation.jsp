@@ -33,51 +33,37 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
-												<span>Add New Division</span>
+												<span>Add New Designation</span>
 											</h5>
 										</div>
 										<div class="col-12 col-sm-6">
-											<div class="form-group ">
-												<label for="validationCustom01"> Select Section</label> <select
-													class="form-control form-select" name="sectionId">
-													<option></option>
-													<option></option>
-												</select>
-
-											</div>
-										</div>
-										<div class="col-12 col-sm-6">
-											<div class="form-group">
-												<label for="validationCustom01"> Select Class </label> <select
-													class="form-control form-select" name="sectionId">
-													<option></option>
-													<option></option>
-												</select>
-											</div>
-										</div>
-										<div class="col-12 col-sm-6">
-											<div class="form-group">
-												<label for="validationCustom01"> Division Name</label> <input
-													type="text" name="nextAcademicYearDate"
-													class="form-control" id="validationCustom01" required>
-											</div>
-										</div>
-										<div class="col-12 col-sm-6">
 											<div class="form-group row">
-												<label for="validationCustom01">Status</label> <select
+												<label for="validationCustom01" class="">Designation
+													Name</label> <input type="text" class="form-control"
+													id="validationCustom01" required name="sectionName">
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please Provide Section
+													Name.</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6">
+											<div class="form-group">
+												<label for="validationCustom01"> Status </label> <select
 													class="form-control form-select" id="validationCustom01"
 													required name="status">
 													<option>Active</option>
 													<option>In-Active</option>
 												</select>
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please Provide Section
+													Name.</div>
+
 											</div>
-
 										</div>
-										<div class="col-12 text-end">
 
+										<div class="col-12 text-end">
 											<button type="submit" class="btn btn-primary">Save</button>
 											<button type="reset" class="btn btn-danger">Reset</button>
-
 										</div>
 									</div>
 								</form>
@@ -86,22 +72,22 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 					</div>
 				</div>
 
+
 				<div class="col-lg-12">
 					<div class="card">
 						<div class="card-header">
-
-							<h5 class="card-title">Division Details -</h5>
+							<h5 class="card-title">Designation Details -</h5>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class=" mb-0 table table-bordered ">
-									<thead>
+								<table class=" mb-0 table table-bordered text-center">
+									<thead class="bg-primary">
 
 										<tr class="text-center">
 											<th>Serial No.</th>
-											<th>Division Name</th>
+											<th>Designation</th>
 											<th>Status</th>
-											<th>Action</th>
+											<th>Update</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -110,25 +96,23 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											int cnt = 1;
 											Connection con = ConnectionProvider.getConnection();
 											Statement stmt = con.createStatement();
-											ResultSet rs = stmt.executeQuery("select * from academicyear");
+											ResultSet rs = stmt.executeQuery("select * from section");
 											while (rs.next()) {
 										%>
 
-										<tr class="text-center">
+										<tr class="">
 											<td><%=cnt%></td>
-											<td><%=rs.getString("academicYear")%></td>
-											<td><%=rs.getString("startmonthNumber")%></td>
+											<td><%=rs.getString("sectionName")%></td>
+											<td><%=rs.getString("status")%></td>
 											<td class="">
-												<div class="actions ">
-													<a
-														href="update_Division.jsp?id=<%=rs.getInt("academicYearId")%>"
-														class="btn btn-sm bg-danger-light"  data-bs-toggle="tooltip" data-bs-placement="top" title="Update"> <i
+												<div class="actions text-center">
+													<a href="update_Section.jsp?id=<%=rs.getInt("sectionId")%>"
+														class="btn btn-sm bg-danger-light"> <i
 														class="feather-edit"></i>
 													</a>
 												</div>
 											</td>
 										</tr>
-
 
 										<%
 										cnt++;
@@ -145,6 +129,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 
