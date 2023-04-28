@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form>
+								<form id="addStaffRole" method="post">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
@@ -142,20 +142,21 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#addAcademicYear").submit(function(event) {
+			$("#addStaffRole").submit(function(event) {
+				console.log("Inside")
 				event.preventDefault();
 				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($("#addAcademicYear")[0].checkValidity() === false) {
+				   if ($("#addStaffRole")[0].checkValidity() === false) {
 				        event.stopPropagation();
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : 'DB/academicYearDB.jsp',
-							data:$("#addAcademicYear").serialize(),
+							url : 'DB/addStaffRoleDB.jsp',
+							data:$("#addStaffRole").serialize(),
 							success : function(responce) {
 								console.log(responce.trim())
 								if (responce.trim() == "1") {
-									$("#addAcademicYear")[0].reset()
+									$("#addStaffRole")[0].reset()
 									Swal.fire({
 										icon: 'success',
 										  title: 'AcademicYear Added Successfully ' ,
@@ -176,7 +177,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 							}
 						})
 				    }
-				    $("#addAcademicYear").addClass('was-validated');
+				    $("#addStaffRole").addClass('was-validated');
 				});
 			})
 		

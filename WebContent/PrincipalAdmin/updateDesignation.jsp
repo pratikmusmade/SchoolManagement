@@ -1,10 +1,9 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.schoolmanagement.helper.ConnectionProvider"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +11,12 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
 <jsp:include page="./components/principalAdminLinks.jsp"></jsp:include></head>
+
+<link
+	href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
+"
+	rel="stylesheet"></link>
 <body>
 	<div class="main-wrapper">
 		<jsp:include page="./components/principalAdminHeader.jsp"></jsp:include></head>
@@ -28,16 +33,18 @@
 							</div>
 							<div class="card-body">
 								<%
-								int id = Integer.parseInt(request.getParameter("id"));
+ 								int designationId = Integer.parseInt(request.getParameter("designationId"));
+  /*								int designationId = 1;
+ */
 								Connection con = ConnectionProvider.getConnection();
 								Statement stmt = con.createStatement();
-								ResultSet rs = stmt.executeQuery("select * from section where sectionId=" + id + ";");
+								ResultSet rs = stmt.executeQuery("select * from designation where designationId=" + designationId + ";");
 								rs.next();
 								%>
-								<form id="updateSection" method="post">
+								<form id="updateDesignationDB" method="post">
 									<div class="form-group row">
 										<label> Section Name</label> <input type="text"
-											name="sectionName" value="<%=rs.getString("sectionName")%>"
+											name="designationName" value="<%=rs.getString("designationName")%>"
 											class="form-control">
 									</div>
 
@@ -45,7 +52,7 @@
 									<div class="form-group row">
 										<label for="validationCustom01">Status</label> <select
 											class="form-control" id="validationCustom01" required
-											name="status" value="<%=rs.getString("status")%>">
+											name="designationStatus" value="<%=rs.getString("designationStatus")%>">
 											<option>Active</option>
 											<option>In-Active</option>
 										</select>
@@ -67,24 +74,30 @@
 		</div>
 
 		<jsp:include page="./components/principalAdminFooter.jsp"></jsp:include></head>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+	
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#addDesignation").submit(function(event) {
+			$("#updateDesignationDB").submit(function(event) {
 				event.preventDefault();
 				console.log("Inside")
 				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($("#addDesignation")[0].checkValidity() === false) {
+				   if ($("#updateDesignationDB")[0].checkValidity() === false) {
 				        event.stopPropagation();
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : 'DB/updateSectionDB.jsp?id=<%=id%>',
-							data:$("#addDesignation").serialize(),
+							url : 'DB/updateDesignationDB.jsp?designationId=<%=designationId%>',
+							data:$("#updateDesignationDB").serialize(),
 							success : function(responce) {
 								console.log(responce.trim())
 								if (responce.trim() == "1") {
-									$("#addDesignation")[0].reset()
+									$("#updateDesignationDB")[0].reset()
+									
 									Swal.fire({
 										icon: 'success',
 										  title: 'AcademicYear Added Successfully ' ,
@@ -105,7 +118,7 @@
 							}
 						})
 				    }
-				    $("#addDesignation").addClass('was-validated');
+				    $("#updateDesignationDB").addClass('was-validated');
 				});
 			})
 		

@@ -29,7 +29,7 @@
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form>
+								<form id="addClassForm">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
