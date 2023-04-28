@@ -90,12 +90,12 @@
 					<li class="submenu"><a href="#"><i class="fas fa-folder"></i>
 							<span>Documents</span> <span class="menu-arrow"></span></a>
 						<ul>
-							<li><a href=""></a></li>
-							<li><a href=""></a></li>
-							<li><a href=""></a></li>
-							<li><a href=""></a></li>
-							<li><a href=""></a></li>
-							<li><a href=""></a></li>
+							<li><a href="">Generate Bonafide</a></li>
+							<li><a href="">Print Bonafide</a></li>
+							<li><a href="">Generate TC</a></li>
+							<li><a href="">Print TC</a></li>
+							<li><a href="">Generate Nirgam Utara</a></li>
+							<li><a href="">Print Nirgam Utara</a></li>
 						</ul></li>
 					<li><a href="user_Information.jsp"><i
 							class="fas fa-user-graduate"></i> <span>User Information</span></a></li>

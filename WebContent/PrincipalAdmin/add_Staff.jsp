@@ -1,7 +1,5 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.*"%>
 <%@page import="com.schoolmanagement.helper.ConnectionProvider"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -29,23 +27,22 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 							<div class="card-header">
 								<h5 class="card-title">Add New Staff -</h5>
 								<div class=" text-end float-end ms-auto">
-									<span class="login-danger"><span class="fw-bold">*</span> this fields are
-										required.</span>
+									<span class="login-danger"><span class="fw-bold">*</span>
+										this fields are required.</span>
 								</div>
 							</div>
 
 							<div class="card-body">
-								<form action="">
+								<form action="DB/addStaffDB.jsp">
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="staffProfile"
-													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fa-solid fa-camera"></i></span>Staff Profile Pic <span
-													class="login-danger">*</span> -</label>
+												<label for="staffProfile" class="col-form-label col-lg-3"><span
+													class="px-2"><i class="fa-solid fa-camera"></i></span>Staff
+													Profile Pic <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="file" name="staffProfilePic"
-														class="form-control" id="staffProfilea">
+														class="form-control" id="staffProfilePic">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Upload Staff
 														Photo.</div>
@@ -54,13 +51,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom02"
-													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fa-solid fa-user"></i></span>Employee Id <span
-													class="login-danger">*</span>-</label>
+												<label for="employeeId" class="col-form-label col-lg-3"><span
+													class="px-2"><i class="fa-solid fa-user"></i></span>Employee
+													Id <span class="login-danger">*</span>-</label>
 												<div class="col-lg-12">
 													<input type="number" name="employeeId" class="form-control"
-														id="validationCustom02">
+														id="employeeId">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Upload Employee
 														Id.</div>
@@ -76,10 +72,26 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 												<div class="col-lg-12">
 													<select class="form-control form-select" name="staffRoleId"
 														id="validationCustom01" required>
-														<option value="" disabled selected hidden>Select
-															Staff Role...</option>
-														<option></option>
-														<option></option>
+														<option value="" disabled selected hidden>Please
+															Select</option>
+
+														<%
+														try {
+															Connection con = ConnectionProvider.getConnection();
+															Statement stmt = con.createStatement();
+															ResultSet rs = stmt.executeQuery("select * from staffrole");
+															while (rs.next()) {
+														%>
+
+														<option value="<%=rs.getInt("staffRoleId")%>">
+															<%=rs.getString("staffRole")%></option>
+														<%
+														}
+
+														} catch (Exception e) {
+														e.printStackTrace();
+														}
+														%>
 
 													</select>
 													<div class="valid-feedback">Looks good!</div>
@@ -93,12 +105,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01" class="col-lg-3"><span
+												<label for="StaffFirstName" class="col-lg-3"><span
 													class="px-2"><i class="fa-sharp fa-solid fa-user"></i></span>First
 													Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="firstName" class="form-control"
-														id="validationCustom01">
+														id="StaffFirstName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide First
 														Name.</div>
@@ -107,13 +119,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
-													class="col-form-label col-lg-3"><span class="px-2">
-														<i class="fa-solid fa-user"></i>
+												<label for="StaffMiddleName" class="col-form-label col-lg-3"><span
+													class="px-2"> <i class="fa-solid fa-user"></i>
 												</span>Middle Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="middleName" class="form-control"
-														id="validationCustom01">
+														id="StaffMiddleName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Middle
 														Name.</div>
@@ -122,13 +133,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="StaffLastName"
 													class="col-form-label col-lg-3"><span class="px-2">
 														<i class="fa-solid fa-user"></i>
 												</span>Last Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="lastName" class="form-control"
-														id="validationCustom01">
+														id="StaffLastName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Last
 														Name.</div>
@@ -139,13 +150,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffGender"
 													class="col-form-label col-lg-3"><span class="px-2"><i
 														class="fas fa-calendar-alt"></i></span> Gender <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<select class="form-control form-select" name="gender"
-														id="validationCustom01" required><option value=""
+														id="staffGender" required><option value=""
 															disabled selected hidden>Please Select</option>
 														<option>Male</option>
 														<option>Female</option>
@@ -158,13 +169,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffDOB"
 													class="col-form-label col-lg-3"><span class="px-2"><i
 														class="fas fa-calendar-alt"></i></span> Date Of Birth <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="date" name="dateofBirth" class="form-control"
-														id="validationCustom01">
+														id="staffDOB">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
 														Date Of Birth.</div>
@@ -173,13 +184,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffQualification"
 													class="col-form-label col-lg-3"><span class="px-2">
 														<i class="fa-solid fa-user"></i>
 												</span>Qualification <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="Qualification"
-														class="form-control" id="validationCustom01">
+														class="form-control" id="staffQualification">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide
 														Qualification.</div>
@@ -191,13 +202,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffEmail"
 													class="col-form-label col-lg-3"><span class="px-2"><i
 														class="fas fa-envelope"></i></span> Email <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="email" name="staffEmail" class="form-control"
-														id="validationCustom01">
+														id="staffEmail">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
 														Email.</div>
@@ -207,13 +218,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffMobileNo"
 													class="col-form-label col-lg-3"><span class="px-2"><i
 														class="fas fa-mobile"></i></span> Mobile No <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="number" name="moblileNo" class="form-control"
-														id="validationCustom01">
+														id="staffMobileNo">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
 														Date Of Birth.</div>
@@ -222,13 +233,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffSalary"
 													class="col-form-label col-lg-3"><span class="px-2">
 														<i class="fas fa-money-bill"></i></i>
 												</span>Salary <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="studentCast" class="form-control"
-														id="validationCustom01">
+														id="staffSalary">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Student
 														Middle Name.</div>
@@ -240,13 +251,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
+												<label for="staffDesignation"
 													class="col-form-label col-lg-3"><span class="px-2"><i
 														class="fas fa-envelope"></i></span> Designation <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="email" name="staffEmail" class="form-control"
-														id="validationCustom01">
+													<input type="text" name="staffDesignation"
+														class="form-control" id="staffDesignation">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
 														Email.</div>
@@ -276,8 +287,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 														<i class="fas fa-money-bill"></i>
 												</span>Cast Category <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="casteCategory" class="form-control"
-														id="validationCustom01">
+													<input type="text" name="casteCategory"
+														class="form-control" id="validationCustom01">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Student
 														Middle Name.</div>
@@ -307,8 +318,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										<div class="col-xl-10">
 											<div class="form-group row">
 												<label class="col-lg-3 col-form-label"><span
-													class="px-1"><i class="fas fa-map-marked-alt"></i></span>Address <span class="login-danger">*</span>
-													- </label>
+													class="px-1"><i class="fas fa-map-marked-alt"></i></span>Address
+													<span class="login-danger">*</span> - </label>
 												<div class="col-lg-9">
 													<textarea name="staffAddress" rows="6" cols="6"
 														class="form-control" placeholder="Address..."></textarea>
@@ -355,7 +366,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									$("#addAcademicYear")[0].reset()
 									Swal.fire({
 										icon: 'success',
-										  title: 'AcademicYear Added Successfully ' ,
+										  title: 'New Staff Added Successfully ' ,
 										  confirmButtonText: 'Ok',
 										}).then((result) => {
 										  /* Read more about isConfirmed, isDenied below */
@@ -364,7 +375,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 								} else {
 									Swal.fire({
 									icon: 'error',
-									title: 'AcademicYear cannot be added ' ,
+									title: 'Staff cannot be added Please ReCheck the Information ' ,
 									confirmButtonText: 'Ok',
 									}).then((result) => {
 									/* Read more about isConfirmed, isDenied below */

@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form>
+								<form action="">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
@@ -38,34 +38,34 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-12 col-sm-6">
 											<div class="form-group row">
-										<label for="validationCustom01" class="">Section Name</label>
-										<input type="text" class="form-control"
-											id="validationCustom01" required name="sectionName">
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please Provide Section
-											Name.</div>
-									</div>
+												<label for="validationCustom01" class="">Section
+													Name</label> <input type="text" class="form-control"
+													id="validationCustom01" required name="sectionName">
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please Provide Section
+													Name.</div>
+											</div>
 										</div>
 										<div class="col-12 col-sm-6">
 											<div class="form-group">
-												<label for="validationCustom01"> Status </label>  <select
-											class="form-control form-select" id="validationCustom01" required
-											name="status">
-											<option>Active</option>
-											<option>In-Active</option>
-										</select>
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please Provide Section
-											Name.</div>
+												<label for="validationCustom01"> Status </label> <select
+													class="form-control form-select" id="validationCustom01"
+													required name="status">
+													<option>Active</option>
+													<option>In-Active</option>
+												</select>
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please Provide Section
+													Name.</div>
 
 											</div>
 										</div>
-										
+
 										<div class="col-12 text-end">
-											
-												<button type="submit" class="btn btn-primary">Save</button>
-												<button type="reset" class="btn btn-danger">Reset</button>
-											
+
+											<button type="submit" class="btn btn-primary">Save</button>
+											<button type="reset" class="btn btn-danger">Reset</button>
+
 										</div>
 									</div>
 								</form>

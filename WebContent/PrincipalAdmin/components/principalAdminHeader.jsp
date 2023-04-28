@@ -13,9 +13,9 @@
 	<div class="header">
 
 		<div class="header-left">
-			<a href="index.html" class="logo"> <img src="../assets/img/logo.png"
+			<a href="" class="logo"> <img src="../assets/img/logo.png"
 				alt="Logo">
-			</a> <a href="index.html" class="logo logo-small"> <img
+			</a> <a href="" class="logo logo-small"> <img
 				src="../assets/img/logo-small.png" alt="Logo" width="30" height="30">
 			</a>
 		</div>
