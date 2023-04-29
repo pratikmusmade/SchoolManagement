@@ -18,4 +18,5 @@
 
 <link rel="stylesheet" href="../assets/css/style.css">
 
+<script src="https://kit.fontawesome.com/341dc2ad4e.js" crossorigin="anonymous"></script>
  <meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
