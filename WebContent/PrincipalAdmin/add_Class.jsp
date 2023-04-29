@@ -18,9 +18,9 @@
 <body>
 	<div class="main-wrapper">
 		<jsp:include page="./components/principalAdminHeader.jsp"></jsp:include></head>
-		</head>
+		
 		<jsp:include page="./components/principalAdminSidebar.jsp"></jsp:include></head>
-		</head>
+		
 		<div class="page-wrapper">
 
 			<div class="content container-fluid">
@@ -29,7 +29,7 @@
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form>
+								<form id="addClassForm">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
@@ -204,7 +204,6 @@
 				    $("addClassForm").addClass('was-validated');
 				});
 			})
-		
 	</script>
 
 </body>

@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form>
+								<form id="addDesignation">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
@@ -40,7 +40,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											<div class="form-group row">
 												<label for="validationCustom01" class="">Designation
 													Name</label> <input type="text" class="form-control"
-													id="validationCustom01" required name="sectionName">
+													id="validationCustom01" required name=designationName>
 												<div class="valid-feedback">Looks good!</div>
 												<div class="invalid-feedback">Please Provide Section
 													Name.</div>
@@ -50,7 +50,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											<div class="form-group">
 												<label for="validationCustom01"> Status </label> <select
 													class="form-control form-select" id="validationCustom01"
-													required name="status">
+													required name="designationStatus">
 													<option>Active</option>
 													<option>In-Active</option>
 												</select>
@@ -96,17 +96,17 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											int cnt = 1;
 											Connection con = ConnectionProvider.getConnection();
 											Statement stmt = con.createStatement();
-											ResultSet rs = stmt.executeQuery("select * from section");
+											ResultSet rs = stmt.executeQuery("select * from designation");
 											while (rs.next()) {
 										%>
 
 										<tr class="">
 											<td><%=cnt%></td>
-											<td><%=rs.getString("sectionName")%></td>
-											<td><%=rs.getString("status")%></td>
+											<td><%=rs.getString("designationName")%></td>
+											<td><%=rs.getString("designationStatus")%></td>
 											<td class="">
 												<div class="actions text-center">
-													<a href="update_Section.jsp?id=<%=rs.getInt("sectionId")%>"
+													<a href="updateDesignation.jsp?designationId=<%=rs.getInt("designationId")%>"
 														class="btn btn-sm bg-danger-light"> <i
 														class="feather-edit"></i>
 													</a>
@@ -142,20 +142,21 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#addAcademicYear").submit(function(event) {
+			$("#addDesignation").submit(function(event) {
 				event.preventDefault();
+				console.log("Inside")
 				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($("#addAcademicYear")[0].checkValidity() === false) {
+				   if ($("#addDesignation")[0].checkValidity() === false) {
 				        event.stopPropagation();
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : 'DB/academicYearDB.jsp',
-							data:$("#addAcademicYear").serialize(),
+							url : 'DB/addDesignationDB.jsp',
+							data:$("#addDesignation").serialize(),
 							success : function(responce) {
 								console.log(responce.trim())
 								if (responce.trim() == "1") {
-									$("#addAcademicYear")[0].reset()
+									$("#addDesignation")[0].reset()
 									Swal.fire({
 										icon: 'success',
 										  title: 'AcademicYear Added Successfully ' ,
@@ -176,7 +177,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 							}
 						})
 				    }
-				    $("#addAcademicYear").addClass('was-validated');
+				    $("#addDesignation").addClass('was-validated');
 				});
 			})
 		

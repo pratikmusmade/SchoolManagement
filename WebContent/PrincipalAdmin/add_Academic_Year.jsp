@@ -11,11 +11,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
 <jsp:include page="./components/principalAdminLinks.jsp"></jsp:include>
-<link
-	href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
-"
-	rel="stylesheet"></link>
+
 </head>
 <body>
 	<div class="main-wrapper">
@@ -29,7 +25,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form>
+								<form id="addAcademicYear">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
@@ -152,6 +148,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 		$(document).ready(function() {
 			$("#addAcademicYear").submit(function(event) {
 				event.preventDefault();
+				console.log("Inside")
 				//let f = new FormData($("#addAcademicYear")[0])
 				   if ($("#addAcademicYear")[0].checkValidity() === false) {
 				        event.stopPropagation();
