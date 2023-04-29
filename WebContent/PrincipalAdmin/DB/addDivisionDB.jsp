@@ -7,14 +7,14 @@
 	<%
 	String s1 = request.getParameter("sectionId");
 	String s2 = request.getParameter("classId");
-	String s3 = request.getParameter("divisionName");
+	String s3 = request.getParameter("division");
 	String s4 = request.getParameter("status");
 
 	int done = 0;
 	try {
 		//out.print(s1);
 		Connection con = ConnectionProvider.getConnection();
-		String query = "insert into division(division,sectionId,classId,status) values(?,?,?,?)";
+		String query = "insert into division( division, classId, sectionId, divisionStatus) values(?,?,?,?)";
 		PreparedStatement pstm = con.prepareStatement(query);
 		pstm.setString(1, s3);
 		pstm.setString(2, s1);

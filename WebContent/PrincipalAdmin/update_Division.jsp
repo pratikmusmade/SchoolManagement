@@ -65,7 +65,7 @@
 											<div class="form-group row">
 												<label for="validationCustom01">Status</label> <select
 											class="form-control" id="validationCustom01" 
-											name="status" value="<%=rs.getString("status")%>">
+											name="status" value="<%=rs.getString("divisionStatus")%>">
 													<option>Active</option>
 													<option>In-Active</option>
 												</select>
