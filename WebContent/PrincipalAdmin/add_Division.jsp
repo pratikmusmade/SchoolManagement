@@ -156,12 +156,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											<td><%=rs.getString("divisionStatus")%></td>
 											<td class="">
 												<div class="actions ">
-													<a href="update_Division.jsp?id=<%=rs.getInt("divisionId")%>"
+													<a
+														href="update_Division.jsp?id=<%=rs.getInt("divisionId")%>"
 														class="btn btn-sm bg-danger-light"> <i
 														class="feather-edit"></i>
 													</a>
 												</div>
-											</td>	
+											</td>
 										</tr>
 
 
@@ -189,7 +190,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 		<script
 			src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
 	</div>
-
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#addDivision").submit(function(event) {

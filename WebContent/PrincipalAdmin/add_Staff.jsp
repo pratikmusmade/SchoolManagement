@@ -109,7 +109,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"><i class="fa-sharp fa-solid fa-user"></i></span>First
 													Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="firstName" class="form-control"
+													<input type="text" name="staffFirstName" class="form-control"
 														id="StaffFirstName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide First
@@ -123,7 +123,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"> <i class="fa-solid fa-user"></i>
 												</span>Middle Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="middleName" class="form-control"
+													<input type="text" name="staffMiddleName" class="form-control"
 														id="StaffMiddleName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Middle
@@ -133,9 +133,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="StaffLastName"
-													class="col-form-label col-lg-3"><span class="px-2">
-														<i class="fa-solid fa-user"></i>
+												<label for="StaffLastName" class="col-form-label col-lg-3"><span
+													class="px-2"> <i class="fa-solid fa-user"></i>
 												</span>Last Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="lastName" class="form-control"
@@ -150,10 +149,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="staffGender"
-													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fas fa-calendar-alt"></i></span> Gender <span
-													class="login-danger">*</span> -</label>
+												<label for="staffGender" class="col-form-label col-lg-3"><span
+													class="px-2"><i class="fas fa-calendar-alt"></i></span>
+													Gender <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<select class="form-control form-select" name="gender"
 														id="staffGender" required><option value=""
@@ -169,10 +167,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="staffDOB"
-													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fas fa-calendar-alt"></i></span> Date Of Birth <span
-													class="login-danger">*</span> -</label>
+												<label for="staffDOB" class="col-form-label col-lg-3"><span
+													class="px-2"><i class="fas fa-calendar-alt"></i></span>
+													Date Of Birth <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="date" name="dateofBirth" class="form-control"
 														id="staffDOB">
@@ -202,9 +199,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="staffEmail"
-													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fas fa-envelope"></i></span> Email <span
+												<label for="staffEmail" class="col-form-label col-lg-3"><span
+													class="px-2"><i class="fas fa-envelope"></i></span> Email <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="email" name="staffEmail" class="form-control"
@@ -218,10 +214,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="staffMobileNo"
-													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fas fa-mobile"></i></span> Mobile No <span
-													class="login-danger">*</span> -</label>
+												<label for="staffMobileNo" class="col-form-label col-lg-3"><span
+													class="px-2"><i class="fas fa-mobile"></i></span> Mobile No
+													<span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="number" name="moblileNo" class="form-control"
 														id="staffMobileNo">
@@ -233,9 +228,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="staffSalary"
-													class="col-form-label col-lg-3"><span class="px-2">
-														<i class="fas fa-money-bill"></i></i>
+												<label for="staffSalary" class="col-form-label col-lg-3"><span
+													class="px-2"> <i class="fas fa-money-bill"></i></i>
 												</span>Salary <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="text" name="studentCast" class="form-control"
@@ -269,7 +263,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											<div class="form-group row">
 												<label for="validationCustom01"
 													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fas fa-mobile"></i></span> Cast Id <span
+														class="fas fa-mobile"></i></span> Cast  <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
 													<input type="number" name="staffCastId"
