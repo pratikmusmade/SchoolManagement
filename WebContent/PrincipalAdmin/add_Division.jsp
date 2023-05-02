@@ -165,7 +165,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : 'DB/academicYearDB.jsp',
+							url : 'DB/divisionDB.jsp',
 							data:$("#addAcademicYear").serialize(),
 							success : function(responce) {
 								console.log(responce.trim())
@@ -173,7 +173,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									$("#addAcademicYear")[0].reset()
 									Swal.fire({
 										icon: 'success',
-										  title: 'AcademicYear Added Successfully ' ,
+										  title: 'Division Added Successfully ' ,
 										  confirmButtonText: 'Ok',
 										}).then((result) => {
 										  /* Read more about isConfirmed, isDenied below */
@@ -182,7 +182,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 								} else {
 									Swal.fire({
 									icon: 'error',
-									title: 'AcademicYear cannot be added ' ,
+									title: 'Division cannot be added ' ,
 									confirmButtonText: 'Ok',
 									}).then((result) => {
 									/* Read more about isConfirmed, isDenied below */
