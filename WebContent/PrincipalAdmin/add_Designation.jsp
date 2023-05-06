@@ -159,19 +159,17 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 									$("#addDesignation")[0].reset()
 									Swal.fire({
 										icon: 'success',
-										  title: 'AcademicYear Added Successfully ' ,
+										  title: 'Designation Added Successfully ' ,
 										  confirmButtonText: 'Ok',
 										}).then((result) => {
-										  /* Read more about isConfirmed, isDenied below */
 											 window.location.reload();
 										})
 								} else {
 									Swal.fire({
 									icon: 'error',
-									title: 'AcademicYear cannot be added ' ,
+									title: 'Designation cannot be added ' ,
 									confirmButtonText: 'Ok',
 									}).then((result) => {
-									/* Read more about isConfirmed, isDenied below */
 									})												
 								}
 							}

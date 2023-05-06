@@ -33,7 +33,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 							</div>
 
 							<div class="card-body">
-								<form action="DB/addStaffDB.jsp">
+
+								<form id="addStaffForm" enctype="multipart/form-data "
+									method="post">
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group row">
@@ -55,7 +57,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"><i class="fa-solid fa-user"></i></span>Employee
 													Id <span class="login-danger">*</span>-</label>
 												<div class="col-lg-12">
-													<input type="number" name="employeeId" class="form-control"
+													<input type="number" name="staffId" class="form-control"
 														id="employeeId">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Upload Employee
@@ -109,8 +111,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"><i class="fa-sharp fa-solid fa-user"></i></span>First
 													Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="staffFirstName" class="form-control"
-														id="StaffFirstName">
+													<input type="text" name="staffFirstName"
+														class="form-control" id="StaffFirstName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide First
 														Name.</div>
@@ -123,8 +125,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"> <i class="fa-solid fa-user"></i>
 												</span>Middle Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="staffMiddleName" class="form-control"
-														id="StaffMiddleName">
+													<input type="text" name="staffMiddleName"
+														class="form-control" id="StaffMiddleName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Middle
 														Name.</div>
@@ -137,8 +139,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"> <i class="fa-solid fa-user"></i>
 												</span>Last Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="lastName" class="form-control"
-														id="StaffLastName">
+													<input type="text" name="staffLastName"
+														class="form-control" id="StaffLastName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Last
 														Name.</div>
@@ -153,7 +155,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"><i class="fas fa-calendar-alt"></i></span>
 													Gender <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<select class="form-control form-select" name="gender"
+													<select class="form-control form-select" name="staffGender"
 														id="staffGender" required><option value=""
 															disabled selected hidden>Please Select</option>
 														<option>Male</option>
@@ -171,7 +173,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"><i class="fas fa-calendar-alt"></i></span>
 													Date Of Birth <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="date" name="dateofBirth" class="form-control"
+													<input type="date" name="staffDOB" class="form-control"
 														id="staffDOB">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
@@ -186,7 +188,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 														<i class="fa-solid fa-user"></i>
 												</span>Qualification <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="Qualification"
+													<input type="text" name="staffQualification"
 														class="form-control" id="staffQualification">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide
@@ -218,8 +220,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"><i class="fas fa-mobile"></i></span> Mobile No
 													<span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="number" name="moblileNo" class="form-control"
-														id="staffMobileNo">
+													<input type="number" name="staffMoblileNo"
+														class="form-control" id="staffMobileNo">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
 														Date Of Birth.</div>
@@ -232,7 +234,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 													class="px-2"> <i class="fas fa-money-bill"></i></i>
 												</span>Salary <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="studentCast" class="form-control"
+													<input type="text" name="staffSalary" class="form-control"
 														id="staffSalary">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Student
@@ -250,11 +252,30 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 														class="fas fa-envelope"></i></span> Designation <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="staffDesignation"
-														class="form-control" id="staffDesignation">
-													<div class="valid-feedback">Looks good!</div>
-													<div class="invalid-feedback">Please Provide Staff
-														Email.</div>
+													<select class="form-control form-select"
+														name="staffDesignation" id="staffDesignation" required>
+														<option value="" disabled selected hidden>Please
+															Select</option>
+
+														<%
+														try {
+															Connection con = ConnectionProvider.getConnection();
+															Statement stmt = con.createStatement();
+															ResultSet rs = stmt.executeQuery("select * from designation");
+															while (rs.next()) {
+														%>
+
+														<option value="<%=rs.getInt("designationId")%>">
+															<%=rs.getString("designationName")%></option>
+														<%
+														}
+
+														} catch (Exception e) {
+														e.printStackTrace();
+														}
+														%>
+
+													</select>
 												</div>
 											</div>
 										</div>
@@ -263,26 +284,47 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 											<div class="form-group row">
 												<label for="validationCustom01"
 													class="col-form-label col-lg-3"><span class="px-2"><i
-														class="fas fa-mobile"></i></span> Cast  <span
+														class="fas fa-mobile"></i></span> Cast Category <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="number" name="staffCastId"
-														class="form-control" id="validationCustom01">
-													<div class="valid-feedback">Looks good!</div>
-													<div class="invalid-feedback">Please Provide Staff
-														Date Of Birth.</div>
+													<select class="form-control form-select"
+														name="staffCastCategoryId" id="validationCustom01"
+														required>
+														<option value="" disabled selected hidden>Please
+															Select</option>
+
+														<%
+														try {
+															Connection con = ConnectionProvider.getConnection();
+															Statement stmt = con.createStatement();
+															ResultSet rs = stmt.executeQuery("select * from castCategory");
+															while (rs.next()) {
+																System.out.println(rs.getInt("castCategoryId"));
+																System.out.println(rs.getString("castCategoryName"));
+														%>
+
+														<option value="<%=rs.getInt("castCategoryId")%>">
+															<%=rs.getString("castCategoryName")%></option>
+														<%
+														}
+
+														} catch (Exception e) {
+														e.printStackTrace();
+														}
+														%>
+
+													</select>
 												</div>
 											</div>
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group row">
-												<label for="validationCustom01"
-													class="col-form-label col-lg-3"><span class="px-2">
-														<i class="fas fa-money-bill"></i>
-												</span>Cast Category <span class="login-danger">*</span> -</label>
+												<label for="staffCastName" class="col-form-label col-lg-3"><span
+													class="px-2"> <i class="fas fa-money-bill"></i>
+												</span>Cast Name <span class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="text" name="casteCategory"
-														class="form-control" id="validationCustom01">
+													<input type="text" name="staffCastName"
+														class="form-control" id="staffCastName">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Student
 														Middle Name.</div>
@@ -298,8 +340,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 														class="fas fa-envelope"></i></span> Joining Date <span
 													class="login-danger">*</span> -</label>
 												<div class="col-lg-12">
-													<input type="date" name="joiningDate" class="form-control"
-														id="validationCustom01">
+													<input type="date" name="staffJoiningDate"
+														class="form-control" id="validationCustom01">
 													<div class="valid-feedback">Looks good!</div>
 													<div class="invalid-feedback">Please Provide Staff
 														Email.</div>
@@ -344,20 +386,25 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#addAcademicYear").submit(function(event) {
+			$("#addStaffForm").submit(function(event) {
 				event.preventDefault();
-				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($("#addAcademicYear")[0].checkValidity() === false) {
+				let f = new FormData($(this)[0])
+
+				   if ($("#addStaffForm")[0].checkValidity() === false) {
 				        event.stopPropagation();
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : 'DB/academicYearDB.jsp',
-							data:$("#addAcademicYear").serialize(),
+							enctype:"multipart/form-data",
+							url : 'DB/add_StaffDB.jsp',
+							data : f,
+							processData : false,
+							contentType : false,
+							cache : false,
 							success : function(responce) {
 								console.log(responce.trim())
 								if (responce.trim() == "1") {
-									$("#addAcademicYear")[0].reset()
+									$("#addStaffForm")[0].reset()
 									Swal.fire({
 										icon: 'success',
 										  title: 'New Staff Added Successfully ' ,
@@ -378,7 +425,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 							}
 						})
 				    }
-				    $("#addAcademicYear").addClass('was-validated');
+				    $("#addStaffForm").addClass('was-validated');
 				});
 			})
 		

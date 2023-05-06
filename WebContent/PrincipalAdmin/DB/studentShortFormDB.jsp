@@ -16,7 +16,6 @@ try {
 	
 //Student Short Form
 
-	String studentFirstName = m.getParameter("studentFirstName");
 	String studentPRNNumber = m.getParameter("studentPRNNumber");
 	String gender = m.getParameter("gender");
 	String castCategoryId = m.getParameter("castCategory");

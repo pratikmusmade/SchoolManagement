@@ -1,6 +1,5 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="com.schoolmanagement.helper.ConnectionProvider"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -32,7 +31,7 @@
 												<span>Academic Year Entry</span>
 											</h5>
 										</div>
-										<div class="col-12 col-sm-4">
+										<div class="col-12 col-sm-6">
 											<div class="form-group ">
 												<label for="validationCustom01"> Starting Academic
 													Year (Ex. 2020)</label> <input type="text" name="academicYear"
@@ -42,18 +41,7 @@
 													Year.</div>
 											</div>
 										</div>
-										<div class="col-12 col-sm-4">
-											<div class="form-group">
-												<label for="validationCustom01"> Academic Year Start
-													Month Number </label> <input type="text" name="startmonthNumber"
-													class="form-control" id="validationCustom01" required>
-												<div class="valid-feedback">Looks good!</div>
-												<div class="invalid-feedback">Please Provide Academic
-													Year Start Month Number.</div>
-
-											</div>
-										</div>
-										<div class="col-12 col-sm-4">
+										<div class="col-12 col-sm-6">
 											<div class="form-group">
 												<label for="validationCustom01"> Next Academic Year
 													Date</label> <input type="date" name="nextAcademicYearDate"
@@ -61,10 +49,10 @@
 											</div>
 										</div>
 										<div class="col-12 text-end">
-											
-												<button type="submit" class="btn btn-primary">Save</button>
-												<button type="reset" class="btn btn-danger">Reset</button>
-											
+
+											<button type="submit" class="btn btn-primary">Save</button>
+											<button type="reset" class="btn btn-danger">Reset</button>
+
 										</div>
 									</div>
 								</form>
@@ -87,7 +75,6 @@
 										<tr class="text-center">
 											<th>Serial No.</th>
 											<th>Academic Year</th>
-											<th>Start Month Year</th>
 											<th>Next Academic Year Date</th>
 											<th>Update</th>
 										</tr>
@@ -105,14 +92,14 @@
 										<tr class="text-center">
 											<td><%=cnt%></td>
 											<td><%=rs.getString("academicYear")%></td>
-											<td><%=rs.getString("startmonthNumber")%></td>
 											<td><%=rs.getString("nextAcademicYearDate")%></td>
 											<td class="">
 												<div class="actions ">
 													<a
 														href="update_Academic_Year.jsp?id=<%=rs.getInt("academicYearId")%>"
 														class="btn btn-sm bg-danger-light"> <i
-														class="feather-edit"></i>
+														class="feather-edit" data-bs-toggle="tooltip"
+														data-bs-placement="top" title="Update"></i>
 													</a>
 												</div>
 											</td>

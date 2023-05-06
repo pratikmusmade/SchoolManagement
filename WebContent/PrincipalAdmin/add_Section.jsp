@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<form action="">
+								<form id="addSectionForm">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
@@ -144,44 +144,48 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
 	</div>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#addAcademicYear").submit(function(event) {
-				event.preventDefault();
-				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($("#addAcademicYear")[0].checkValidity() === false) {
-				        event.stopPropagation();
-				    } else {
-						$.ajax({
-							type : 'POST',
-							url : 'DB/academicYearDB.jsp',
-							data:$("#addAcademicYear").serialize(),
-							success : function(responce) {
-								console.log(responce.trim())
-								if (responce.trim() == "1") {
-									$("#addAcademicYear")[0].reset()
-									Swal.fire({
-										icon: 'success',
-										  title: 'AcademicYear Added Successfully ' ,
-										  confirmButtonText: 'Ok',
-										}).then((result) => {
-										  /* Read more about isConfirmed, isDenied below */
-											 window.location.reload();
-										})
-								} else {
-									Swal.fire({
-									icon: 'error',
-									title: 'AcademicYear cannot be added ' ,
-									confirmButtonText: 'Ok',
+	$(document).ready(function() {
+		console.log("testing")
+		$('#addSectionForm').submit(function(event) {
+			event.preventDefault();
+			   if ($('#addSectionForm')[0].checkValidity() === false) {
+			        event.stopPropagation();
+			    } else {
+					$.ajax({
+						type : 'POST',
+						url : 'DB/add_SectionDB.jsp',
+						data: $('#addSectionForm').serialize(),
+						success : function(responce) {
+							console.log(responce.trim())
+							if (responce.trim() == "1") {
+								$('#addSectionForm')[0].reset()
+								Swal.fire({
+									icon: 'success',
+									  title: 'Section Added Successfull' ,
+									  confirmButtonText: 'Ok',
 									}).then((result) => {
-									/* Read more about isConfirmed, isDenied below */
-									})												
-								}
+										 window.location.reload();
+									})
+							} else {
+								Swal.fire({
+								icon: 'error',
+								title: 'Something Went Wrong..' ,
+								confirmButtonText: 'Ok',
+								}).then((result) => {
+								})												
 							}
-						})
-				    }
-				    $("#addAcademicYear").addClass('was-validated');
-				});
-			})
+						}
+					})
+			    }
+			    $("#addSectionForm").addClass('was-validated');
+			});
+
+
+		})
+		
+		
+
+
 		
 	</script>
 

@@ -6,9 +6,8 @@
 
 
 <%
-String castName = request.getParameter("castName");
-String status = request.getParameter("status");
-
+String castName = request.getParameter("castCategoryName");
+String status = request.getParameter("castCategoryStatus");
 
 int done = 0;
 try {
@@ -25,5 +24,4 @@ try {
 } catch (Exception e) {
 	e.printStackTrace();
 }
-
 %>

@@ -1,8 +1,5 @@
-
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.*"%>
 <%@page import="com.schoolmanagement.helper.ConnectionProvider"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,53 +9,67 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, user-scalable=0">
 <jsp:include page="./components/principalAdminLinks.jsp"></jsp:include>
+<link
+	href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css
+"
+	rel="stylesheet"></link>
 </head>
 <body>
 	<div class="main-wrapper">
 		<jsp:include page="./components/principalAdminHeader.jsp"></jsp:include>
 		<jsp:include page="./components/principalAdminSidebar.jsp"></jsp:include>
 		<div class="page-wrapper">
-
 			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row">
+						<div class="col">
+							<h3 class="page-title">Cast Form</h3>
+						</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="card">
 							<div class="card-body">
-								<%
-								int id = Integer.parseInt(request.getParameter("id"));
-								Connection con = ConnectionProvider.getConnection();
-								Statement stmt = con.createStatement();
-								ResultSet rs = stmt.executeQuery("select * from academicyear where academicYearId=" + id + ";");
-								rs.next();
-								%>
-								<form>
+								<form id="addCastForm">
 									<div class="row">
 										<div class="col-12">
 											<h5 class="form-title">
-												<span>Update Academic Year </span>
+												<span>Add New Cast</span>
 											</h5>
 										</div>
 										<div class="col-12 col-sm-6">
-											<div class="form-group ">
-												<label for="validationCustom01"> Starting Academic
-													Year (Ex. 2020)</label> <input type="text" name="academicYear"
-													value="<%=rs.getString("academicyear")%>"
-													class="form-control">
+											<div class="form-group row">
+												<label for="castName" class="">Cast Name</label> <input
+													type="text" class="form-control" name="castCategoryName"
+													id="castName" required>
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please Provide Section
+													Name.</div>
+											</div>
+										</div>
+										<div class="col-12 col-sm-6">
+											<div class="form-group">
+												<label for="castStatus"> Status </label> <select
+													class="form-control form-select" id="castStatus" required
+													name="castCategoryStatus">
+													<option>Active</option>
+													<option>In-Active</option>
+												</select>
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please Provide Cast
+													Name.</div>
 
 											</div>
 										</div>
-										
-										<div class="col-12 col-sm-6">
-											<div class="form-group">
-												<label for="validationCustom01"> Next Academic Year
-													Date</label> <input type="date" name="nextAcademicYearDate"
-													value="<%=rs.getString("nextAcademicYearDate")%>"
-													class="form-control">
-											</div>
-										</div>
+
 										<div class="col-12 text-end">
-											<button type="submit" class="btn btn-primary">Update</button>
+
+											<button type="submit" class="btn btn-primary">Save</button>
 											<button type="reset" class="btn btn-danger">Reset</button>
+
 										</div>
 									</div>
 								</form>
@@ -67,45 +78,50 @@
 					</div>
 				</div>
 
+
 			</div>
 		</div>
 
 		<jsp:include page="./components/principalAdminFooter.jsp"></jsp:include>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js
-"></script>
+
 	</div>
+
+
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#updateAcademicYear').submit(function(event) {
+			$("#addCastForm").submit(function(event) {
 				event.preventDefault();
 				//let f = new FormData($("#addAcademicYear")[0])
-				   if ($('#updateAcademicYear')[0].checkValidity() === false) {
+				   if ($("#addCastForm")[0].checkValidity() === false) {
 				        event.stopPropagation();
 				    } else {
 						$.ajax({
 							type : 'POST',
-							url : "DB/updateacademicYearDB.jsp?id=<%=id%>",
-							data:$('#updateAcademicYear').serialize(),
+							url : './DB/castDB.jsp',	
+							data:$("#addCastForm").serialize(),
 							success : function(responce) {
 								console.log(responce.trim())
 								if (responce.trim() == "1") {
-									$('#updateAcademicYear')[0].reset()
+									$("#addCastForm")[0].reset()
 									Swal.fire({
 										icon: 'success',
-										  title: 'AcademicYear Updated Successfully ' ,
+										  title: 'Cast Added Successfully ' ,
 										  confirmButtonText: 'Ok',
 										}).then((result) => {
 										  /* Read more about isConfirmed, isDenied below */
-											 window.location.href="addAcademicYear.jsp";
+											 window.location.reload();
 										})
 								} else {
 									Swal.fire({
 									icon: 'error',
-									title: 'AcademicYear cannot be added ' ,
+									title: 'Cast cannot be added ' ,
 									confirmButtonText: 'Ok',
 									}).then((result) => {
 									/* Read more about isConfirmed, isDenied below */
@@ -114,11 +130,14 @@
 							}
 						})
 				    }
-				    $('#updateAcademicYear').addClass('was-validated');
+				    $("addCastForm").addClass('was-validated');
 				});
 			})
 		
 	</script>
+
+
+
 
 
 </body>
