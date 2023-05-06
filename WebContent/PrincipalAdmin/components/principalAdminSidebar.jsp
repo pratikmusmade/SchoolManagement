@@ -63,10 +63,10 @@
 					<li class="submenu"><a href="#"><i class="fas fa-user"></i>
 							<span> Student</span> <span class="menu-arrow"></span></a>
 						<ul>
-							<li><a href="studentEntryForm.jsp">Student Entry Form </a></li>
+							<li><a href="student_Entry_Form.jsp">Student Entry Form </a></li>
 							<!--  <li><a href="shortEntryForm.jsp">Short Entry Form</a></li>
 						<li><a href="fullEntryForm.jsp">Full Entry Form</a></li> -->
-							<li><a href="student_View.jsp">View</a></li>
+							<li><a href="student_List.jsp">View</a></li>
 							<li><a href="download_Details.jsp">Download Details</a></li>
 							<li><a href="generateStudentICard.jsp">Generate I-card</a></li>
 							<!--  <li><a href="otherDetails.jsp">Other Details</a></li> -->

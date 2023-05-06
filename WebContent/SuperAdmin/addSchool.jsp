@@ -276,7 +276,7 @@
 		$(document).ready(function() {
 			$("#addSchoolForm").submit(function(event) {
 				event.preventDefault();
-				//var f = $(this).serialize();
+				//var f	= $(this).serialize();
 				let f = new FormData($(this)[0])
 				console.log(f)
 				if(f[0].checkValidity()){
